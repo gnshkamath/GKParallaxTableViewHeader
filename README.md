@@ -1,5 +1,5 @@
 # GKParallaxTableViewHeader
-A sample app for parallax scrolling effect in the table header view.
+A sample iOS app for parallax scrolling effect in the table header view.
 
 Here's a demo:
 
