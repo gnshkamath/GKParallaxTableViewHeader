@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sld-D9-UHk">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Parallax Table View Controller-->
+        <scene sceneID="enk-O8-OwO">
+            <objects>
+                <tableViewController id="Sld-D9-UHk" customClass="GKParallaxTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P3R-cP-nKV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="T0o-cQ-03d" userLabel="Header View" customClass="GKParallaxTableViewHeader">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ParallaxImage" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-UU-XOU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <animations/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0h-Ew-Nho">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUa-6L-v8f" userLabel="Title Label">
+                                            <rect key="frame" x="283" y="268.5" width="33.5" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" red="0.25098039215686274" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="cUa-6L-v8f" firstAttribute="centerX" secondItem="I0h-Ew-Nho" secondAttribute="centerX" id="Mzy-GX-OPJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="cUa-6L-v8f" secondAttribute="bottom" constant="11" id="va2-HY-D57"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="I0h-Ew-Nho" firstAttribute="bottom" secondItem="ycP-UU-XOU" secondAttribute="bottom" id="CKe-3k-hNk"/>
+                                <constraint firstItem="I0h-Ew-Nho" firstAttribute="top" secondItem="ycP-UU-XOU" secondAttribute="top" id="Dxc-Qm-7p5"/>
+                                <constraint firstItem="ycP-UU-XOU" firstAttribute="leading" secondItem="T0o-cQ-03d" secondAttribute="leading" id="H8u-g4-Ycs"/>
+                                <constraint firstAttribute="bottom" secondItem="ycP-UU-XOU" secondAttribute="bottom" id="MOf-8H-gSf"/>
+                                <constraint firstItem="I0h-Ew-Nho" firstAttribute="trailing" secondItem="ycP-UU-XOU" secondAttribute="trailing" id="U7X-kT-124"/>
+                                <constraint firstItem="ycP-UU-XOU" firstAttribute="top" secondItem="T0o-cQ-03d" secondAttribute="top" id="aeW-ZQ-xR5"/>
+                                <constraint firstAttribute="trailing" secondItem="ycP-UU-XOU" secondAttribute="trailing" id="en5-q0-bLf"/>
+                                <constraint firstItem="I0h-Ew-Nho" firstAttribute="leading" secondItem="ycP-UU-XOU" secondAttribute="leading" id="ftY-jv-d67"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="bottomConstraint" destination="MOf-8H-gSf" id="Wm1-VW-L3v"/>
+                                <outlet property="overlayView" destination="I0h-Ew-Nho" id="af9-75-aM9"/>
+                                <outlet property="topConstraint" destination="aeW-ZQ-xR5" id="U6Z-7d-DOJ"/>
+                            </connections>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="dbU-js-dlF">
+                                <rect key="frame" x="0.0" y="328" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbU-js-dlF" id="XWT-ua-Uyn">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sld-D9-UHk" id="5Sf-wC-cbQ"/>
+                            <outlet property="delegate" destination="Sld-D9-UHk" id="SXc-0G-OhL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="T0o-cQ-03d" id="J0S-K1-HKx"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecH-Cq-e4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="168"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ParallaxImage" width="500" height="650"/>
+    </resources>
+</document>
